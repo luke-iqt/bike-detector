@@ -69,4 +69,14 @@ next_frame = now.getTime() + frame_delay;
 runOnce();
   }
 
+
+  if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
+    console.log("Let's get this party started")
+  }
+  navigator.mediaDevices.getUserMedia({video: true})
+  async function getDevices() {
+    const devices = await navigator.mediaDevices.enumerateDevices();
+    console.log(devices);
+  }
+getDevices();
   app();
