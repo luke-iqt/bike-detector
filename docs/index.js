@@ -12,8 +12,8 @@ const MODEL_URL = 'vww_128_color_bicycle_005_web_model/model.json';
 let net;
 var webcam;
 var model;
-let fps = 10;
-let frame_delay = 1000 /5;
+let fps = 4;
+let frame_delay = 1000 / fps;
 var now = new Date();
 var next_frame = now.getTime() + frame_delay;
 
@@ -28,7 +28,7 @@ async function setup() {
     
     // Create an object from Tensorflow.js data API which could capture image 
     // from the web camera as Tensor.
-    const webcamConfig = { resizeWidth: 128, resizeHeight: 128, centerCrop: true}
+    const webcamConfig = { resizeWidth: 128, resizeHeight: 128, centerCrop: true, facingMode: 'environment'}
     webcam = await tf.data.webcam(webcamElement,webcamConfig);
 
 }
