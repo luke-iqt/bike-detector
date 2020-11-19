@@ -28,7 +28,7 @@ async function setup() {
     
     // Create an object from Tensorflow.js data API which could capture image 
     // from the web camera as Tensor.
-    const webcamConfig = { resizeWidth: 128, resizeHeight: 128, centerCrop: true, facingMode: 'environment'}
+    const webcamConfig = { resizeWidth: 128, resizeHeight: 128, centerCrop: false, facingMode: 'environment'}
     webcam = await tf.data.webcam(webcamElement,webcamConfig);
 
 }
