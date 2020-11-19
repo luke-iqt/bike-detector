@@ -10,21 +10,30 @@ const MODEL_URL = 'vww_128_color_bicycle_005_web_model/model.json';
 //const cat = document.getElementById('cat');
 //model.execute(tf.browser.fromPixels(cat));
 let net;
+var webcam;
+var model;
+let fps = 10;
+let frame_delay = 1000 /5;
+var now = new Date();
+var next_frame = now.getTime() + frame_delay;
 
-async function app() {
+async function setup() {
     console.log('Loading mobilenet..');
   
     // Load the model.
     //const model = await tfjs-converter.loadGraphModel(MODEL_URL);
-    const model = await tf.loadGraphModel(MODEL_URL);
+    model = await tf.loadGraphModel(MODEL_URL);
     //net = await mobilenet.load();
     console.log('Successfully loaded model');
     
     // Create an object from Tensorflow.js data API which could capture image 
     // from the web camera as Tensor.
     const webcamConfig = { resizeWidth: 128, resizeHeight: 128, centerCrop: true}
-    const webcam = await tf.data.webcam(webcamElement,webcamConfig);
-    while (true) {
+    webcam = await tf.data.webcam(webcamElement,webcamConfig);
+
+}
+async function runOnce() {
+ 
       const img = await webcam.capture();
       //const result = await net.classify(img);
       let offset = tf.scalar(127.5);
@@ -33,17 +42,31 @@ async function app() {
           .expandDims().reshape([-1, 128, 128, 3]);
       const result = await model.execute(new_frame);
   
-      const bike = result.dataSync();
+      const predictions = result.dataSync();
+      const bike = Math.floor(predictions[1]*100);
+      const notBike = Math.floor(predictions[0]*100);
       document.getElementById('console').innerText = `
-      Not a Bike: ${bike[0]} \n
-      Bike: ${bike[1]} 
+      Bike: ${bike}%
+      Not a Bike: ${notBike}%
     `;
       // Dispose the tensor to release the memory.
       img.dispose();
-  
+
       // Give some breathing room by waiting for the next animation frame to
       // fire.
       await tf.nextFrame();
-    }
+      now = new Date();
+      var nap_time = next_frame - now.getTime();
+      next_frame = now.getTime() + frame_delay;  
+      //console.log(nap_time);
+      setTimeout(runOnce, nap_time);
   }
-app();
+  async function app() {
+await setup();
+
+    now = new Date();
+next_frame = now.getTime() + frame_delay;
+runOnce();
+  }
+
+  app();
