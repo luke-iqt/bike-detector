@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bike-detector/static/css/main.faf3b974.chunk.css",
-    "main.js": "/bike-detector/static/js/main.55361aa6.chunk.js",
-    "main.js.map": "/bike-detector/static/js/main.55361aa6.chunk.js.map",
+    "main.js": "/bike-detector/static/js/main.ec02394c.chunk.js",
+    "main.js.map": "/bike-detector/static/js/main.ec02394c.chunk.js.map",
     "runtime-main.js": "/bike-detector/static/js/runtime-main.45076a22.js",
     "runtime-main.js.map": "/bike-detector/static/js/runtime-main.45076a22.js.map",
     "static/js/2.1999b661.chunk.js": "/bike-detector/static/js/2.1999b661.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.45076a22.js",
     "static/js/2.1999b661.chunk.js",
     "static/css/main.faf3b974.chunk.css",
-    "static/js/main.55361aa6.chunk.js"
+    "static/js/main.ec02394c.chunk.js"
   ]
 }
