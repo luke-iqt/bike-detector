@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/bike-detector/static/css/main.0fd776fd.chunk.css",
-    "main.js": "/bike-detector/static/js/main.15f79a33.chunk.js",
-    "main.js.map": "/bike-detector/static/js/main.15f79a33.chunk.js.map",
+    "main.js": "/bike-detector/static/js/main.f6bd190c.chunk.js",
+    "main.js.map": "/bike-detector/static/js/main.f6bd190c.chunk.js.map",
     "runtime-main.js": "/bike-detector/static/js/runtime-main.45076a22.js",
     "runtime-main.js.map": "/bike-detector/static/js/runtime-main.45076a22.js.map",
-    "static/js/2.0188b6cc.chunk.js": "/bike-detector/static/js/2.0188b6cc.chunk.js",
-    "static/js/2.0188b6cc.chunk.js.map": "/bike-detector/static/js/2.0188b6cc.chunk.js.map",
+    "static/js/2.d14f8f30.chunk.js": "/bike-detector/static/js/2.d14f8f30.chunk.js",
+    "static/js/2.d14f8f30.chunk.js.map": "/bike-detector/static/js/2.d14f8f30.chunk.js.map",
     "static/js/3.bf6d6cf7.chunk.js": "/bike-detector/static/js/3.bf6d6cf7.chunk.js",
     "static/js/3.bf6d6cf7.chunk.js.map": "/bike-detector/static/js/3.bf6d6cf7.chunk.js.map",
     "index.html": "/bike-detector/index.html",
     "static/css/main.0fd776fd.chunk.css.map": "/bike-detector/static/css/main.0fd776fd.chunk.css.map",
-    "static/js/2.0188b6cc.chunk.js.LICENSE.txt": "/bike-detector/static/js/2.0188b6cc.chunk.js.LICENSE.txt"
+    "static/js/2.d14f8f30.chunk.js.LICENSE.txt": "/bike-detector/static/js/2.d14f8f30.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.45076a22.js",
-    "static/js/2.0188b6cc.chunk.js",
+    "static/js/2.d14f8f30.chunk.js",
     "static/css/main.0fd776fd.chunk.css",
-    "static/js/main.15f79a33.chunk.js"
+    "static/js/main.f6bd190c.chunk.js"
   ]
 }
